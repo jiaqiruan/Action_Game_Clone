@@ -4,7 +4,7 @@ if(Hp<=0){
 		audio_play_sound(sound_enemy_dying,30,false);
 	}
 	Dead = true;
-	global.num_enemy--;
+	//global.num_enemy--;
 }
 if(!Dead){
 	if(distance_to_object(obj_player)>=200){
