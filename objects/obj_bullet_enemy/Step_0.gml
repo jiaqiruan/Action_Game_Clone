@@ -2,7 +2,7 @@ if(place_meeting(x,y,obj_solid)){
 	instance_create_layer(x,y,"Instances",obj_explsion);
 	instance_destroy(self);
 }
-if(place_meeting(x,y,obj_player)&&obj_player.Hp>0){
+if(place_meeting(x,y,obj_player)&&obj_player.Hp>0&&!obj_player.dash){
 	if(!obj_player.hit){
 		obj_player.hit = true;
 		global.hit = true;

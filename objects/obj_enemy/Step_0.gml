@@ -3,6 +3,9 @@ if(Hp<=0){
 	if(!audio_is_playing(sound_enemy_dying)&&!Dead){
 		audio_play_sound(sound_enemy_dying,30,false);
 	}
+	if(obj_player.dash_charge <2&&!Dead){
+		obj_player.dash_charge++;
+	}
 	Dead = true;
 	//global.num_enemy--;
 }

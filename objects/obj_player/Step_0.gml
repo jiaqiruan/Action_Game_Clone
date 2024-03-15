@@ -31,6 +31,37 @@ if(!Dead){
 	if(keyboard_check(ord("D"))){
 		MoveX(move_speed);
 	}
+	if(keyboard_check_pressed(vk_space)){
+		if(!dash&&dash_ready){
+			dash = true;
+			dash_ready = false;
+		}
+	}
+	if(dash_charge>=2){
+		dash_charge = 0;
+		if(!dash_ready){
+			dash_ready = true;
+		}
+	}
+	if(dash){
+		dashing_cooldown--;
+		if(mouse_x>x){
+			MoveX(2*move_speed);
+		}else{
+			MoveX(-2*move_speed);
+		}
+		if(mouse_y>y){
+			MoveY(2*move_speed);
+		}else{
+			MoveY(-2*move_speed);
+		}
+		instance_create_layer(x,y,"Instances",obj_player_shadow);
+	}
+	
+	if(dashing_cooldown<=0){
+		dash = false;
+		dashing_cooldown = dashing_cd;
+	}
 
 	if(!keyboard_check(ord("A"))&&!keyboard_check(ord("W"))&&!keyboard_check(ord("S"))&&!keyboard_check(ord("D"))){
 		image_speed = 0;

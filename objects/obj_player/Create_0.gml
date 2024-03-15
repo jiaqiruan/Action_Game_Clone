@@ -10,6 +10,12 @@ pc = (Hp/MaxHp)*100;
 Dead = false;
 Dead_Animation = 40;
 
+dash_ready = true;
+dash_charge = 0;
+dash = false;
+dashing_cd = 20;
+dashing_cooldown = dashing_cd;
+
 hit = false;
 hitting_cd = room_speed/3;
 hitting_cooldown = hitting_cd;
