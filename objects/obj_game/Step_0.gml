@@ -7,4 +7,8 @@ if(hitting_cooldown<=0){
 	hitting_cooldown = hitting_cd;
 	game_set_speed(normal_speed,gamespeed_fps);
 }
-
+enemy_wave_cooldown--;
+if(enemy_wave_cooldown<=0){
+	enemy_wave_cooldown = enemy_wave_cd;
+	CreateEnemies();
+}

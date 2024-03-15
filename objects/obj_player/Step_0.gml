@@ -18,6 +18,13 @@ if(!Dead){
 		if(!audio_is_playing(sound_lowhp)){
 			audio_play_sound(sound_lowhp,20,true);
 		}
+	}else{
+		if(audio_is_playing(sound_lowhp)){
+			audio_stop_sound(sound_lowhp);
+		}
+		if(!audio_is_playing(sound_battle)){
+			audio_play_sound(sound_battle,20,true);
+		}
 	}
 	if(keyboard_check(ord("W"))){
 		MoveY(-move_speed);
@@ -74,7 +81,11 @@ if(!Dead){
 	Dead_Animation--;
 	if(Dead_Animation<=0){
 		image_speed = 0;
+		if(keyboard_check_pressed(ord("F"))){
+			room_restart();
+		}
 	}
+	
 }
 
 pc = (Hp/MaxHp)*100;

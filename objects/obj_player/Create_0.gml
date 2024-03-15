@@ -13,7 +13,7 @@ Dead_Animation = 40;
 dash_ready = true;
 dash_charge = 0;
 dash = false;
-dashing_cd = 20;
+dashing_cd = 30;
 dashing_cooldown = dashing_cd;
 
 hit = false;

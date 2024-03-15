@@ -1,0 +1,1 @@
+startMessage = "Press R to reload, use Mouse Wheel to change weapon, Press Space to dash. Dash is recharged if you kill two enemies. Press F to Start the Game."

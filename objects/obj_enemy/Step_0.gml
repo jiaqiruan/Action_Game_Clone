@@ -6,6 +6,12 @@ if(Hp<=0){
 	if(obj_player.dash_charge <2&&!Dead){
 		obj_player.dash_charge++;
 	}
+	if(!Dead){
+		var randomN = irandom_range(0,5);
+		if(randomN>=4){
+			instance_create_layer(x+10,y+10,"Instances",obj_heal);
+		}
+	}
 	Dead = true;
 	//global.num_enemy--;
 }
